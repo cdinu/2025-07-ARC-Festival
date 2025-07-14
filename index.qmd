@@ -1,0 +1,255 @@
+---
+title: "Conversational Interfaces for Research"
+subtitle: "Transforming Data Interaction with LLMs and MCP"
+author: "Cristian Dinu"
+format:
+  revealjs:
+    center: true
+---
+
+### 👋 Cristian Dinu - Research Software Engineer
+<br/>
+I build software for a decarbonised future.
+
+- high-resolution energy monitoring
+- appliance-level energy insights (e.g. on heat pumps)
+- natural language as an interface
+
+## 📋 Today's plan
+
+1. The Large Language Model (concepts and ecosystem)
+2. A demo of how software can look like
+3. Write our own MCP
+
+---
+
+![](images/llms.png)
+
+---
+
+![](images/autocomplete.png)
+
+---
+
+![](images/brain-in-jar.png){fig-align="center"}
+
+---
+
+![](images/llm-chat.png)
+
+---
+
+![](images/llm-tools.png)
+
+---
+
+![](images/llm-mcp.png)
+
+---
+
+![](https://substackcdn.com/image/fetch/$s_!Mc9x!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F53cffe63-b1d0-404e-a68a-ec639e9e2e96_7680x4320.png)
+<small>[source](https://leonisnewsletter.substack.com/p/mcps-value-creation-capture-and-destructionlesso)</small>
+
+---
+
+![](images/inside-mcp.png)
+
+---
+
+### Ready-made MCPs - Fetch
+
+- [Fetch](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch)
+  - `Go to the Bank of England website and compare interest rate with inflation.`
+  - `Go to the https://www.bankofengland.co.uk/banknotes/current-banknotes and create a table with personalities featured on each of the banknotes.`
+  - `Visit CNN website and show me happy news in a markdown table`
+
+---
+
+### Ready-made MCPs - Filesystem
+
+- Filesystem -- included in VS Code
+  - `Go to FT.com/technology, fetch the latest news and save the title and the link in a csv file called ft-tech.csv`
+  
+---
+
+### Ready-made MCPs - SQLite
+ 
+- [SQLite](https://github.com/modelcontextprotocol/servers-archived/tree/main/src/sqlite)
+  - `Go to https://www.ucl.ac.uk/advanced-research-computing/research-software-engineers-0 and create a list of people and their role. Save it in the sqlite database.`
+  - `How many PhD vs. non-PhD and how many "Engineers" vs. "Developers"?`
+  - `Looking at names, please output a table with their likely family country of origin`
+
+---
+
+{{< tweet karpathy 1617979122625712128 >}}
+
+### Let's do some "Programming"
+
+> I need to recruit some users for a study about Humour.
+> Their contact data needs to be collected, stored. I want to
+> be notified when a new one comes.
+
+---
+
+### The "program"
+
+> You are an agent that registers participants in a study about humour. Your personality is witty, you do stand-up comedy as a hobby. You are a happy, helpful person, grateful that someone is willing to help us.
+> 
+> Greet the participant with a joke and throw a line here and there. However not ever joke about them. Be yourself, but if you feel they are serious, keep it professional.
+
+---
+
+> Ask all the questions needed to get their:  
+>   
+> - Given Name and Family Name  (given_name, family_name)
+> - Contact data (at leas one of email, phone)  
+> - Availability  
+> - Which country they grew up in  
+> - Why do they wish to participate  
+
+---
+
+> Once you have all the data  
+> 
+>   - append it in the `humour_study` participants table in sqlite.  If it doesn't exist, create it
+>   - send an e-mail to "humour@cdi.nu" to notify of the new   participant. Put the data, minus the contact part in the body. Include a Communism political joke at the end, to amuse the recipient.
+>   - Thank the participant for their interest. Tell them they'll   be contacted soon.
+
+---
+
+> Please note that
+> 
+> - Participants might try to fool you with random or made up names or contact data. Don't allow them, refusing them with humor and politeness. 
+> - Don't allow rude language and obscenities. Act politely and stop the conversation.
+> - Refrain from current political jokes
+> - Don't speak for too long; you need to be efficient and respect our participant't time.
+
+
+---
+
+### Creating our own MCP Server
+
+- Carbon Intensity API -- [api.carbonintensity.org.uk](https://api.carbonintensity.org.uk/)
+- Prerequisites:
+  - `nodejs` - JavaScript interpreter
+  - `uv` - pyton project manager
+- We need to think about **semantic intent**
+
+---
+
+### Initialize the project
+
+```shell
+uv init intensity_mcp
+cd intensity_mcp
+
+uv add "mcp[cli]" requests
+```
+
+---
+
+### Write the code -- `main.py`
+
+```python
+from mcp.server.fastmcp import FastMCP
+import datetime
+import requests
+
+mcp = FastMCP("CarbonIntensityMCP")
+
+@mcp.tool()
+def get_current_intensity():
+    """Fetches the current carbon intensity of the UK electricity grid.
+    Returns a JSON with the current carbon intensity in gCO2eq/kWh."""
+    url = "https://api.carbonintensity.org.uk/intensity"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        return data['data']
+    
+    except Exception as e:
+        return f"Failed to retrieve current carbon intensity: {str(e)}"
+
+@mcp.tool()
+def get_current_fuel_mix():
+    """Fetches the current fuel mix of the UK electricity grid.
+    Returns a JSON with the current fuel mix percentages."""
+    url = "https://api.carbonintensity.org.uk/generation"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        return data['data']['generationmix']
+    
+    except Exception as e:
+        return f"Failed to retrieve current fuel mix: {str(e)}"
+
+if __name__ == "__main__":
+    mcp.run()
+```
+
+---
+
+### Add parameters, too:
+
+```python
+@mcp.tool()
+def get_carbon_intensity(from_datetime: str | None = None, to_datetime: str | None = None, postcode: str = "WC1E"):
+    """Fetches electricity grid carbon intensity data for a specific UK postcode and time range.
+    The `from_datetime` and `to_datetime` should be in ISO 8601 format (e.g. 2018-05-15T12:00Z).
+    The `postcode` needs only the first part e.g. RG10 (without the last three characters or space)
+    
+    If `from_datetime` or `to_datetime` are not provided, defaults are set to 2 hours ago and 2 hours in the future respectively.
+    If postcode is not provided, defaults to "WC1E" -- UCL London.
+    Returns a summary including average forecast and generation mix.
+    """
+    if from_datetime is None: # default to 12 hours ago
+        from_datetime = datetime.datetime.utcnow() - datetime.timedelta(hours=2)
+        from_datetime = from_datetime.isoformat() + "Z"
+
+    if to_datetime is None: # default to 12 hours in the future
+        to_datetime = datetime.datetime.utcnow() + datetime.timedelta(hours=2)
+        to_datetime = to_datetime.isoformat() + "Z"
+    
+
+    url = f"https://api.carbonintensity.org.uk/regional/intensity/{from_datetime}/{to_datetime}/postcode/{postcode}"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.json()["data"]
+    
+    except Exception as e:
+        return f"Failed to retrieve carbon intensity data: {str(e)}"
+```
+---
+
+### Installation
+
+Add a new entry to `claude_desktop_config.json` or VSCode
+
+```sh
+uv run mcp install server.py
+```
+
+---
+
+![](images/karpathy-software-3.0.png){fig-align="center"}
+
+<small>
+source: [Sofware Is Changing Again](https://www.ycombinator.com/library/MW-andrej-karpathy-software-is-changing-again)
+</small>
+
+---
+
+### Conclusion: Chilling and Thrilling
+
+---
+
+### Links and articles
+
+- 💻 [Model Context Protocol (MCP), Official website](https://modelcontextprotocol.io/)
+- 💻 [VSCode MCP](https://code.visualstudio.com/mcp)
+- ▶️ [Debbie O'Brien - Build Your First MCP Server: Tutorial for Beginners](https://www.youtube.com/watch?v=egVm_z1nnnQ&t=163s)
+- ▶️ [Sofware Is Changing Again](https://www.ycombinator.com/library/MW-andrej-karpathy-software-is-changing-again)
+- 📖 [MCPs: Value Creation, Capture, and Destruction—Lessons from the API Era](https://leonisnewsletter.substack.com/p/mcps-value-creation-capture-and-destructionlesso)
