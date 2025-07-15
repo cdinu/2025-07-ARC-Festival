@@ -1,10 +1,23 @@
 ---
-title: "Conversational Interfaces for Research"
-subtitle: "Transforming Data Interaction with LLMs and MCP"
-author: "Cristian Dinu"
 format:
   revealjs:
     center: true
+---
+
+:::: {.columns}
+
+::: {.column width="70%"}
+<div>
+  <h1>Conversational Interfaces for Research</h1>
+  <h3>Transforming Data Interaction with LLMs and MCP</h3>
+</div>
+:::
+
+::: {.column width="30%"}
+![](images/qr.png)
+:::
+
+::::
 ---
 
 ### 👋 Cristian Dinu - Research Software Engineer
@@ -226,7 +239,7 @@ def get_carbon_intensity(from_datetime: str | None = None, to_datetime: str | No
 
 ### Installation
 
-Add a new entry to `claude_desktop_config.json` or VSCode
+Add a new entry to `claude_desktop_config.json` or VSCode (very often you need to adjust manually)
 
 ```sh
 uv run mcp install server.py
@@ -242,7 +255,10 @@ source: [Sofware Is Changing Again](https://www.ycombinator.com/library/MW-andre
 
 ---
 
+
 ### Conclusion: Chilling and Thrilling
+
+![](images/qr.png){fig-align="center"}
 
 ---
 

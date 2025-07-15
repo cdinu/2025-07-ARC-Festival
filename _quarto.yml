@@ -12,6 +12,6 @@ format:
     controls: true
     progress: true
     hash: true
-    footer: "Conversational Interfaces for Research | <a href=\"https://cdi.nu\" target=\"_blank\">Cristian Dinu</a> | c.dinu@ucl.ac.uk"
+    footer: "Conversational Interfaces for Research | <a href=\"https://cdi.nu\" target=\"_blank\">Cristian Dinu</a> | Linkedin: <a href=\"https://linkedin.com/in/cdinu\" target=\"_blank\">/in/cdinu</a>"
     menu: true
     preview-links: true
