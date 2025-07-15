@@ -258,7 +258,14 @@ source: [Sofware Is Changing Again](https://www.ycombinator.com/library/MW-andre
 
 ### Conclusion: Chilling and Thrilling
 
-![](images/qr.png){fig-align="center"}
+![](images/qr.png){fig-align="center" style="padding: 5rem;"}
+
+---
+
+### 🏆 Prize voting
+Please submit your vote by latest 15:00!
+
+![](https://api.qrserver.com/v1/create-qr-code/?data=https://forms.office.com/Pages/ResponsePage.aspx?id=_oivH5ipW0yTySEKEdmlwnuzZyJATQZOhPBZeU6-YipUQjVCTlJaMFEyOTRIVlVEV0dNNDNaWVZSVi4u&origin=QRCode&size=300x300&color=0-0-80&format=svg){fig-align="center" style="padding: 5rem;"}
 
 ---
 
