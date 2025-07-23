@@ -2,6 +2,8 @@
 format:
   revealjs:
     center: true
+    auto-animate-easing: ease-in-out
+    auto-animate-duration: 0.2
 ---
 
 :::: {.columns}
@@ -49,6 +51,221 @@ I build software for a decarbonised future.
 ---
 
 ![](images/llm-chat.png)
+
+---
+
+## {auto-animate="true"}
+
+### How LLM Context Works
+
+::: {.r-stack}
+::: {data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 150px; margin: 20px auto;"}
+:::
+:::
+
+::: {style="margin-top: 30px; font-size: 28px;"}
+**Step 1: Initial Context Window**
+:::
+
+---
+
+## {auto-animate="true"}
+
+### How LLM Context Works
+
+::: {.r-stack}
+::: {data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 150px; margin: 20px auto;"}
+::: {data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**System Prompt:** You are a helpful AI assistant
+:::
+:::
+:::
+
+::: {style="margin-top: 30px; font-size: 28px;"}
+**Step 1: Context starts with System Prompt**
+:::
+
+---
+
+## {auto-animate="true"}
+
+### How LLM Context Works
+
+::: {.r-stack}
+::: {data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 150px; margin: 20px auto;"}
+::: {data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**System Prompt:** You are a helpful AI assistant
+:::
+:::
+:::
+
+::: {data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px auto; font-size: 16px; font-weight: bold; width: 400px; margin-top: 40px;"}
+**User:** What is machine learning?
+:::
+
+::: {style="margin-top: 30px; font-size: 28px;"}
+**Step 2: User sends a prompt**
+:::
+
+---
+
+## {auto-animate="true"}
+
+### How LLM Context Works
+
+::: {.r-stack}
+::: {data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 230px; margin: 20px auto;"}
+::: {data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**System Prompt:** You are a helpful AI assistant
+:::
+::: {data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**User:** What is machine learning?
+:::
+:::
+:::
+
+::: {style="margin-top: 30px; font-size: 28px;"}
+**Step 3: User prompt added to context**
+:::
+
+---
+
+## {auto-animate="true"}
+
+### How LLM Context Works
+
+<style>
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 16s steps(40, end);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+</style>
+
+::: {.r-stack}
+::: {data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 340px; margin: 20px auto;"}
+::: {data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**System Prompt:** You are a helpful AI assistant
+:::
+::: {data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**User:** What is machine learning?
+:::
+::: {data-id="ai-response-1" style="background: linear-gradient(90deg, #6f42c1, #5a2d91); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+::: {.typewriter}
+**AI:** Machine learning is a subset of AI that enables computers to learn from data...
+:::
+:::
+:::
+:::
+
+::: {style="margin-top: 20px; font-size: 28px;"}
+**Step 4: AI generates response, adds it to context**
+:::
+
+---
+
+## {auto-animate="true"}
+
+### How LLM Context Works
+
+::: {.r-stack}
+::: {data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 340px; margin: 20px auto;"}
+::: {data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**System Prompt:** You are a helpful AI assistant
+:::
+::: {data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**User:** What is machine learning?
+:::
+::: {data-id="ai-response-1" style="background: linear-gradient(90deg, #6f42c1, #5a2d91); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**AI:** Machine learning is a subset of AI that enables computers to learn from data...
+:::
+:::
+:::
+
+::: {data-id="user-prompt-2" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px auto; font-size: 16px; font-weight: bold; width: 450px; margin-top: 40px;"}
+**User:** Can you give me a specific example?
+:::
+
+::: {style="margin-top: 30px; font-size: 28px;"}
+**Step 5: User sends another prompt**
+:::
+
+---
+
+## {auto-animate="true"}
+
+### How LLM Context Works
+
+::: {.r-stack}
+::: {data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 450px; margin: 20px auto;"}
+::: {data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**System Prompt:** You are a helpful AI assistant
+:::
+::: {data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**User:** What is machine learning?
+:::
+::: {data-id="ai-response-1" style="background: linear-gradient(90deg, #6f42c1, #5a2d91); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**AI:** Machine learning is a subset of AI that enables computers to learn from data...
+:::
+::: {data-id="user-prompt-2" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**User:** Can you give me a specific example?
+:::
+:::
+:::
+
+::: {style="margin-top: 10px; font-size: 28px;"}
+**Step 6: Second prompt added to growing context**
+:::
+
+---
+
+## {auto-animate="true"}
+
+### How LLM Context Works
+
+::: {.r-stack}
+::: {data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 560px; margin: 20px auto;"}
+::: {data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**System Prompt:** You are a helpful AI assistant
+:::
+::: {data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**User:** What is machine learning?
+:::
+::: {data-id="ai-response-1" style="background: linear-gradient(90deg, #6f42c1, #5a2d91); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**AI:** Machine learning is a subset of AI that enables computers to learn from data...
+:::
+::: {data-id="user-prompt-2" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+**User:** Can you give me a specific example?
+:::
+::: {data-id="ai-response-2" style="background: linear-gradient(90deg, #6f42c1, #5a2d91); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;"}
+::: {.typewriter}
+**AI:** Sure! Email spam detection is a common example of machine learning...
+:::
+:::
+:::
+:::
+
+::: {style="margin-top: 10px; font-size: 28px;"}
+**Step 7: AI generates response using full context**
+:::
+
+---
+
+### 🧠 Key Insights: Context is Everything
+
+- Each new prompt and response is **added** to the context
+- The AI sees the **entire conversation history**
+- Context enables **coherent, contextual responses**
+- Context has **limits** (token limits)
+
+::: {style="margin-top: 40px; padding: 20px; background: rgba(0, 123, 255, 0.1); border-left: 4px solid #007bff; border-radius: 5px;"}
+💡 **The context window is like the AI's "working memory" for the conversation**
+:::
 
 ---
 
