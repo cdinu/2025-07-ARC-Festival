@@ -242,6 +242,187 @@ Transforming Data Interaction with LLMs and MCP
 
 
 <img data-src="images/llm-chat.png" class="r-stretch"></section>
+<section id="section" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h3 id="how-llm-context-works">How LLM Context Works</h3>
+<div class="r-stack">
+<div data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 150px; margin: 20px auto;">
+
+</div>
+</div>
+<div style="margin-top: 30px; font-size: 28px;">
+<p><strong>Step 1: Initial Context Window</strong></p>
+</div>
+</section>
+<section id="section-1" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h3 id="how-llm-context-works-1">How LLM Context Works</h3>
+<div class="r-stack">
+<div data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 150px; margin: 20px auto;">
+<div data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>System Prompt:</strong> You are a helpful AI assistant</p>
+</div>
+</div>
+</div>
+<div style="margin-top: 30px; font-size: 28px;">
+<p><strong>Step 1: Context starts with System Prompt</strong></p>
+</div>
+</section>
+<section id="section-2" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h3 id="how-llm-context-works-2">How LLM Context Works</h3>
+<div class="r-stack">
+<div data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 150px; margin: 20px auto;">
+<div data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>System Prompt:</strong> You are a helpful AI assistant</p>
+</div>
+</div>
+</div>
+<div data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px auto; font-size: 16px; font-weight: bold; width: 400px; margin-top: 40px;">
+<p><strong>User:</strong> What is machine learning?</p>
+</div>
+<div style="margin-top: 30px; font-size: 28px;">
+<p><strong>Step 2: User sends a prompt</strong></p>
+</div>
+</section>
+<section id="section-3" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h3 id="how-llm-context-works-3">How LLM Context Works</h3>
+<div class="r-stack">
+<div data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 230px; margin: 20px auto;">
+<div data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>System Prompt:</strong> You are a helpful AI assistant</p>
+</div>
+<div data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>User:</strong> What is machine learning?</p>
+</div>
+</div>
+</div>
+<div style="margin-top: 30px; font-size: 28px;">
+<p><strong>Step 3: User prompt added to context</strong></p>
+</div>
+</section>
+<section id="section-4" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h3 id="how-llm-context-works-4">How LLM Context Works</h3>
+<style>
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 16s steps(40, end);
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+</style>
+<div class="r-stack">
+<div data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 340px; margin: 20px auto;">
+<div data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>System Prompt:</strong> You are a helpful AI assistant</p>
+</div>
+<div data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>User:</strong> What is machine learning?</p>
+</div>
+<div data-id="ai-response-1" style="background: linear-gradient(90deg, #6f42c1, #5a2d91); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<div class="typewriter">
+<p><strong>AI:</strong> Machine learning is a subset of AI that enables computers to learn from data…</p>
+</div>
+</div>
+</div>
+</div>
+<div style="margin-top: 20px; font-size: 28px;">
+<p><strong>Step 4: AI generates response, adds it to context</strong></p>
+</div>
+</section>
+<section id="section-5" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h3 id="how-llm-context-works-5">How LLM Context Works</h3>
+<div class="r-stack">
+<div data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 340px; margin: 20px auto;">
+<div data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>System Prompt:</strong> You are a helpful AI assistant</p>
+</div>
+<div data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>User:</strong> What is machine learning?</p>
+</div>
+<div data-id="ai-response-1" style="background: linear-gradient(90deg, #6f42c1, #5a2d91); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>AI:</strong> Machine learning is a subset of AI that enables computers to learn from data…</p>
+</div>
+</div>
+</div>
+<div data-id="user-prompt-2" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px auto; font-size: 16px; font-weight: bold; width: 450px; margin-top: 40px;">
+<p><strong>User:</strong> Can you give me a specific example?</p>
+</div>
+<div style="margin-top: 30px; font-size: 28px;">
+<p><strong>Step 5: User sends another prompt</strong></p>
+</div>
+</section>
+<section id="section-6" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h3 id="how-llm-context-works-6">How LLM Context Works</h3>
+<div class="r-stack">
+<div data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 450px; margin: 20px auto;">
+<div data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>System Prompt:</strong> You are a helpful AI assistant</p>
+</div>
+<div data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>User:</strong> What is machine learning?</p>
+</div>
+<div data-id="ai-response-1" style="background: linear-gradient(90deg, #6f42c1, #5a2d91); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>AI:</strong> Machine learning is a subset of AI that enables computers to learn from data…</p>
+</div>
+<div data-id="user-prompt-2" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>User:</strong> Can you give me a specific example?</p>
+</div>
+</div>
+</div>
+<div style="margin-top: 10px; font-size: 28px;">
+<p><strong>Step 6: Second prompt added to growing context</strong></p>
+</div>
+</section>
+<section id="section-7" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title"></h2>
+<h3 id="how-llm-context-works-7">How LLM Context Works</h3>
+<div class="r-stack">
+<div data-id="context-box" style="background: #f8f9fa; border: 2px solid #007bff; border-radius: 10px; padding: 20px; width: 700px; height: 560px; margin: 20px auto;">
+<div data-id="system-prompt" style="background: linear-gradient(90deg, #dc3545, #c82333); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>System Prompt:</strong> You are a helpful AI assistant</p>
+</div>
+<div data-id="user-prompt-1" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>User:</strong> What is machine learning?</p>
+</div>
+<div data-id="ai-response-1" style="background: linear-gradient(90deg, #6f42c1, #5a2d91); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>AI:</strong> Machine learning is a subset of AI that enables computers to learn from data…</p>
+</div>
+<div data-id="user-prompt-2" style="background: linear-gradient(90deg, #17a2b8, #138496); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<p><strong>User:</strong> Can you give me a specific example?</p>
+</div>
+<div data-id="ai-response-2" style="background: linear-gradient(90deg, #6f42c1, #5a2d91); color: white; padding: 12px; border-radius: 6px; margin: 8px; font-size: 16px; font-weight: bold;">
+<div class="typewriter">
+<p><strong>AI:</strong> Sure! Email spam detection is a common example of machine learning…</p>
+</div>
+</div>
+</div>
+</div>
+<div style="margin-top: 10px; font-size: 28px;">
+<p><strong>Step 7: AI generates response using full context</strong></p>
+</div>
+</section>
+<section class="slide level2 center">
+
+<h3 id="key-insights-context-is-everything">🧠 Key Insights: Context is Everything</h3>
+<ul>
+<li>Each new prompt and response is <strong>added</strong> to the context</li>
+<li>The AI sees the <strong>entire conversation history</strong></li>
+<li>Context enables <strong>coherent, contextual responses</strong></li>
+<li>Context has <strong>limits</strong> (token limits)</li>
+</ul>
+<div style="margin-top: 40px; padding: 20px; background: rgba(0, 123, 255, 0.1); border-left: 4px solid #007bff; border-radius: 5px;">
+<p>💡 <strong>The context window is like the AI’s “working memory” for the conversation</strong></p>
+</div>
+</section>
 <section class="slide level2 center">
 
 
@@ -294,53 +475,7 @@ Transforming Data Interaction with LLMs and MCP
 </section>
 <section class="slide level2 center">
 
-<p></p><div id="tweet-83695"></div><script>tweet=<!DOCTYPE html>
-<html lang="en" class="dog">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X / ?</title>
-    <meta name="version" content="1">
-    <link href="https://abs.twimg.com/favicons/twitter.3.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="https://abs.twimg.com/errors/fullscreen_errors-047ca1475a6efac7c9c89a9ff92b7a20.css">
-  </head>
-  <body dir="auto">
-    <div class="top">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1519 200">
-        <defs/>
-        <path d="M708 103l9-5 13 1 2-2 5 1h8l1-1 42-5h7l7 3v1l12-2a9368 9368 0 0129-6l2-5 12 1 6-2 3 1 2 1v-2l13-2v1l4 2 7-1h1l17-3 1 2 4-1 18-7 3-1 4-1h9l13-1 1-4 3-2 13 1v2l22-2 10-3h6l10 5 16-5 15-3 2-1 8-4 6-2 12-1 7-2 8 5 7 1 22-9h7l5-1v-1l25-3 1 2 5 2v1h11l2 1 8-4h3l-1 1h11l10-6 6 3 9-1 4-1 1 1 1-2 6-1 1-1 10-2h2l7-5v1h4l3-1c11 0 23 2 34-3 2-2 7 0 10 0l12 1 4 1 9 2 12-1 11-3 11 1h4l10-6 17 1 2 1c9 2 19-3 22-11l1-1 9 1 15-5c3-1 9 4 9-5 5 0 5 3 5 7l2 3 4-1 4-2 9-4 3-3h3l8-4 6-3 26 2 7-4h18l7 1c10 3 13-6 17-12l8 4 3-1 14-3 15-2a38 38 0 01-5-1l-8-4 7-8 8-4-10-136-922 71 16 205z"/>
-        <path d="M-36 193l9-5 13 1 2-2 5 1h8l1-1 42-5h7l7 3v1l12-2a9328 9328 0 0129-6l2-5 12 1 6-2 3 1 2 1v-2l13-2v1l4 2 7-1h1l17-3 1 2 4-1 18-7 3-1 4-1h9l13-1 1-4 3-2 13 1v2l22-2 10-3h6l10 5 16-5 15-3 2-1 8-4 6-2 12-1 7-2 8 5 7 1 22-9h7l5-1v-1l25-3 1 2 5 2v1h11l2 1 8-4h3l-1 1h9a6 6 0 002 0l10-6 6 3 9-1 4-1a6 6 0 001 1l1-2 6-1 1-1 10-2h2l7-5v1h4l3-1c11 0 23 2 34-3 2-2 7 0 10 0l12 1 4 1 9 2 12-1 11-3 11 1h4l10-6 17 1 2 1c9 2 19-3 22-11l1-1 9 1 15-5c3-1 9 4 9-5 5 0 5 3 5 7l2 3 4-1 4-2 9-4 3-3h3l8-4 6-3 26 2 7-4h18l7 1c10 3 13-6 17-12l8 4 3-1 14-3 15-2a37 37 0 01-5-1l-8-4 7-8 8-4-10-136-922 71 16 205z"/>
-      </svg>
-    </div>
-    <div class="container">
-      <div class="content">
-        <a href="https://twitter.com" title="X logo">
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="x-logo"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
-        </a>
-        <h1 id="header">Nothing to see here</h1>
-        <p id="description">Looks like this page doesn’t exist. Here’s a picture of a poodle sitting in a chair for your trouble.</p>
-
-          <a id="button_search" href="/" class="button">Looking for this?</a>
-
-      </div>
-      <img id="image" src="https://abs.twimg.com/errors/ErrorState_NotFound.png" alt="A primped poodle with a bow in its hair sitting in a chair like a human.">
-      <div class="footer">
-        <ul>
-          <li><a href="https://twitter.com/" id="footer_home">Home</a></li>
-          <li><a href="https://status.twitterstat.us/" id="footer_status">Status</a></li>
-          <li><a href="https://twitter.com/tos" id="footer_tos">Terms of Service</a></li>
-          <li><a href="https://twitter.com/privacy" id="footer_privacy">Privacy Policy</a></li>
-          <li><a href="https://support.twitter.com/articles/20170514" id="footer_cookie">Cookie Policy</a></li>
-          <li><a href="https://legal.twitter.com/imprint" id="footer_imprint">Imprint</a></li>
-          <li><a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html" id="footer_ads">Ads info</a></li>
-          <li dir="ltr">&copy; X Corp. <span id="copyright-year">&emsp;&emsp;&emsp;&emsp;</span></li>
-        </ul>
-      </div>
-    </div>
-  </body>
-  <script src="https://abs.twimg.com/errors/404-8651f633fd193e0b546010676a4fac06.js"></script>
-
-;document.getElementById("tweet-83695").innerHTML = tweet["html"];<p></p>
+<p></p><div id="tweet-86019"></div><script>tweet={"url":"https:\/\/twitter.com\/karpathy\/status\/1617979122625712128","author_name":"Andrej Karpathy","author_url":"https:\/\/twitter.com\/karpathy","html":"\u003Cblockquote class=\"twitter-tweet\" align=\"center\"\u003E\u003Cp lang=\"en\" dir=\"ltr\"\u003EThe hottest new programming language is English\u003C\/p\u003E&mdash; Andrej Karpathy (@karpathy) \u003Ca href=\"https:\/\/twitter.com\/karpathy\/status\/1617979122625712128?ref_src=twsrc%5Etfw\"\u003EJanuary 24, 2023\u003C\/a\u003E\u003C\/blockquote\u003E\n\u003Cscript async src=\"https:\/\/platform.twitter.com\/widgets.js\" charset=\"utf-8\"\u003E\u003C\/script\u003E\n\n","width":550,"height":null,"type":"rich","cache_age":"3153600000","provider_name":"Twitter","provider_url":"https:\/\/twitter.com","version":"1.0"};document.getElementById("tweet-86019").innerHTML = tweet["html"];</script><p></p>
 <h3 id="lets-do-some-programming">Let’s do some “Programming”</h3>
 <blockquote>
 <p>I need to recruit some users for a study about Humour. Their contact data needs to be collected, stored. I want to be notified when a new one comes.</p>
@@ -551,8 +686,8 @@ Transforming Data Interaction with LLMs and MCP
 'controlsAuto': false,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
-'autoAnimateEasing': "ease",
-'autoAnimateDuration': 1,
+'autoAnimateEasing': "ease-in-out",
+'autoAnimateDuration': 0.2,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},

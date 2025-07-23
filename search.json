@@ -5,5 +5,61 @@
     "title": "MCP Workshop July 2025",
     "section": "📋 Today’s plan",
     "text": "📋 Today’s plan\n\nThe Large Language Model (concepts and ecosystem)\nA demo of how software can look like\nWrite our own MCP"
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "MCP Workshop July 2025",
+    "section": "",
+    "text": "How LLM Context Works\n\n\n\n\n\n\nStep 1: Initial Context Window"
+  },
+  {
+    "objectID": "index.html#section-1",
+    "href": "index.html#section-1",
+    "title": "MCP Workshop July 2025",
+    "section": "",
+    "text": "How LLM Context Works\n\n\n\nSystem Prompt: You are a helpful AI assistant\n\n\n\n\nStep 1: Context starts with System Prompt"
+  },
+  {
+    "objectID": "index.html#section-2",
+    "href": "index.html#section-2",
+    "title": "MCP Workshop July 2025",
+    "section": "",
+    "text": "How LLM Context Works\n\n\n\nSystem Prompt: You are a helpful AI assistant\n\n\n\n\nUser: What is machine learning?\n\n\nStep 2: User sends a prompt"
+  },
+  {
+    "objectID": "index.html#section-3",
+    "href": "index.html#section-3",
+    "title": "MCP Workshop July 2025",
+    "section": "",
+    "text": "How LLM Context Works\n\n\n\nSystem Prompt: You are a helpful AI assistant\n\n\nUser: What is machine learning?\n\n\n\n\nStep 3: User prompt added to context"
+  },
+  {
+    "objectID": "index.html#section-4",
+    "href": "index.html#section-4",
+    "title": "MCP Workshop July 2025",
+    "section": "",
+    "text": "How LLM Context Works\n\n\n\n\nSystem Prompt: You are a helpful AI assistant\n\n\nUser: What is machine learning?\n\n\n\nAI: Machine learning is a subset of AI that enables computers to learn from data…\n\n\n\n\n\nStep 4: AI generates response, adds it to context"
+  },
+  {
+    "objectID": "index.html#section-5",
+    "href": "index.html#section-5",
+    "title": "MCP Workshop July 2025",
+    "section": "",
+    "text": "How LLM Context Works\n\n\n\nSystem Prompt: You are a helpful AI assistant\n\n\nUser: What is machine learning?\n\n\nAI: Machine learning is a subset of AI that enables computers to learn from data…\n\n\n\n\nUser: Can you give me a specific example?\n\n\nStep 5: User sends another prompt"
+  },
+  {
+    "objectID": "index.html#section-6",
+    "href": "index.html#section-6",
+    "title": "MCP Workshop July 2025",
+    "section": "",
+    "text": "How LLM Context Works\n\n\n\nSystem Prompt: You are a helpful AI assistant\n\n\nUser: What is machine learning?\n\n\nAI: Machine learning is a subset of AI that enables computers to learn from data…\n\n\nUser: Can you give me a specific example?\n\n\n\n\nStep 6: Second prompt added to growing context"
+  },
+  {
+    "objectID": "index.html#section-7",
+    "href": "index.html#section-7",
+    "title": "MCP Workshop July 2025",
+    "section": "",
+    "text": "How LLM Context Works\n\n\n\nSystem Prompt: You are a helpful AI assistant\n\n\nUser: What is machine learning?\n\n\nAI: Machine learning is a subset of AI that enables computers to learn from data…\n\n\nUser: Can you give me a specific example?\n\n\n\nAI: Sure! Email spam detection is a common example of machine learning…\n\n\n\n\n\nStep 7: AI generates response using full context"
   }
 ]
